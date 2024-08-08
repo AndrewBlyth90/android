@@ -82,12 +82,16 @@ fun AppContent(){
 
     val drawResource = when (buttonImage) {
         0 -> R.drawable.lemon_tree
-        else -> R.drawable.lemon_squeeze
+        1,2,3,4,5 -> R.drawable.lemon_squeeze
+        6 -> R.drawable.lemon_drink
+        else -> R.drawable.lemon_restart
     }
 
     val stringResource = when (phrase) {
         0 -> R.string.select_lemon
-        else -> R.string.squeeze_lemon
+        1,2,3,4,5 -> R.string.squeeze_lemon
+        6 -> R.string.drink_lemonade
+        else -> R.string.tap_empty_glass
     }
 
     Column(
@@ -100,8 +104,18 @@ fun AppContent(){
         ) {
             Button(
                 onClick = {
-                    buttonImage += 1
-                    phrase += 1
+
+                    buttonImage = if(buttonImage in 0..<7){
+                        buttonImage + 1
+                    } else {
+                        0
+                    }
+
+                    phrase = if(phrase in 0..<7){
+                        phrase + 1
+                    } else {
+                        0
+                    }
                           },
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Cyan),
                 modifier = Modifier
