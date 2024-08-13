@@ -42,14 +42,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             LemonadeTheme {
-                Column(
-                    modifier = Modifier
-                        .wrapContentSize(Alignment.Center)
-                        .background(Color.White)
-                ){
-                    Title()
-                    AppContent()
-                }
+                LemonadeApp()
             }
         }
     }
