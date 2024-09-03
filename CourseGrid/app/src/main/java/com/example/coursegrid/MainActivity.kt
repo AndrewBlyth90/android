@@ -109,7 +109,6 @@ fun CourseGrid(courseList: List<Course>, modifier: Modifier = Modifier) {
     ) {
         items(courseList) { course ->
             CourseCard(course = course)
-
         }
     }
 }
