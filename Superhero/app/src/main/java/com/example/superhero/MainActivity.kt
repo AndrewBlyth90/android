@@ -24,7 +24,9 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -59,6 +61,7 @@ class MainActivity : ComponentActivity() {
 fun HeroApp(){
     Scaffold(
         topBar = {
+            TopAppBar()
         }
     ) { it ->
         LazyColumn(contentPadding = it, verticalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(start = 16.dp, end = 16.dp)) {
@@ -133,6 +136,20 @@ fun HeroCard(hero: Hero, modifier: Modifier = Modifier){
             hero
         )
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun TopAppBar(modifier: Modifier = Modifier) {
+    CenterAlignedTopAppBar(
+        title = {
+            Text(
+                text = stringResource(R.string.app_name),
+                style = MaterialTheme.typography.displayLarge,
+            )
+        },
+        modifier = modifier
+    )
 }
 
 @Preview(showBackground = true)
