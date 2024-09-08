@@ -14,7 +14,6 @@ data class Album(
 
 )
 
-
 val albums = listOf(
     Album(
         artistNameRes = R.string.alice_in_chains,
