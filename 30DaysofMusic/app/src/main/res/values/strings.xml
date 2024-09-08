@@ -1,6 +1,22 @@
 <resources>
-    <string name="app_name">30 Days of Music</string>
+    <string name="app_name">30 Albums</string>
     <string name="alice_in_chains">Alice in Chains</string>
     <string name="dirt">Dirt</string>
-    <string name="dirt_description">Released in 1992, Dirt is a defining album of Grunge.</string>
+    <string name="dirt_description">Released in 1992. Dirt is a defining album of Grunge.</string>
+
+    <string name="blink_182">Blink 182</string>
+    <string name="take_off">Take Off Your Pants and Jacket</string>
+    <string name="take_off_description">Released in 2001. I listened to this album religiously doing my paper round.</string>
+
+    <string name="black_sabbath">Black Sabbath</string>
+    <string name="masters_of_reality">Masters of Reality</string>
+    <string name="masters_of_reality_desc">Released in 1971. I could have chosen any of the first 5 but this is my favourite.</string>
+
+    <string name="danzig">Danzig</string>
+    <string name="lucifuge">Lucifuge</string>
+    <string name="lucifuge_desc">Released in 1990. Something a bit bluesy but with some power.</string>
+
+    <string name="death">Black Sabbath</string>
+    <string name="symbolic">Masters of Reality</string>
+    <string name="symbolic_desc">Released in 1995. Death really found their groove in this record.</string>
 </resources>
