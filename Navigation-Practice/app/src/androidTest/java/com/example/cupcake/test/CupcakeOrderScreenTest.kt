@@ -68,9 +68,6 @@ class CupcakeOrderScreenTest {
 
             val mockUiState = OrderUiState(quantity = quantity, flavor = flavour, date = date, price = price)
 
-
-
-
             composeTestRule.setContent {
                 OrderSummaryScreen(
                     onCancelButtonClicked = {},
