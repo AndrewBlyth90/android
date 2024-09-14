@@ -119,10 +119,13 @@ fun LunchTrayApp() {
             composable(route = LunchTrayScreen.Entree.name){
                 EntreeMenuScreen(
                     options = DataSource.entreeMenuItems,
-                    onCancelButtonClicked = { navController.navigate(LunchTrayScreen.Start.name) },
+                    onCancelButtonClicked = {
+                        navController.navigate(LunchTrayScreen.Start.name)
+                        viewModel.resetOrder() },
                     onNextButtonClicked = {
                         navController.navigate(LunchTrayScreen.Side.name)},
-                    onSelectionChanged = { viewModel.updateEntree(it) },
+                    onSelectionChanged = {
+                        viewModel.updateEntree(it) },
                     modifier = Modifier.fillMaxSize().padding(innerPadding)
                 )
             }
@@ -130,9 +133,14 @@ fun LunchTrayApp() {
             composable(route = LunchTrayScreen.Side.name){
                 SideDishMenuScreen(
                     options = DataSource.sideDishMenuItems,
-                    onCancelButtonClicked = { navController.navigate(LunchTrayScreen.Start.name) },
-                    onNextButtonClicked = { navController.navigate(LunchTrayScreen.Accompaniment.name)},
-                    onSelectionChanged = {viewModel.updateSideDish(it)},
+                    onCancelButtonClicked = {
+                        navController.navigate(LunchTrayScreen.Start.name)
+                        viewModel.resetOrder()
+                                            },
+                    onNextButtonClicked = {
+                        navController.navigate(LunchTrayScreen.Accompaniment.name)},
+                    onSelectionChanged = {
+                        viewModel.updateSideDish(it)},
                     modifier = Modifier.fillMaxSize().padding(innerPadding)
                 )
             }
@@ -140,9 +148,12 @@ fun LunchTrayApp() {
             composable(route = LunchTrayScreen.Accompaniment.name){
                 AccompanimentMenuScreen(
                     options = DataSource.accompanimentMenuItems,
-                    onCancelButtonClicked = { navController.navigate(LunchTrayScreen.Start.name) },
-                    onNextButtonClicked = { navController.navigate(LunchTrayScreen.Checkout.name) },
-                    onSelectionChanged = {viewModel.updateAccompaniment(it)},
+                    onCancelButtonClicked = {
+                        navController.navigate(LunchTrayScreen.Start.name) },
+                    onNextButtonClicked = {
+                        navController.navigate(LunchTrayScreen.Checkout.name) },
+                    onSelectionChanged = {
+                        viewModel.updateAccompaniment(it) },
                     modifier = Modifier.fillMaxSize().padding(innerPadding)
                 )
             }
@@ -150,8 +161,12 @@ fun LunchTrayApp() {
             composable(route = LunchTrayScreen.Checkout.name){
                 CheckoutScreen(
                     orderUiState = uiState,
-                    onNextButtonClicked = { navController.navigate(LunchTrayScreen.Start.name) },
-                    onCancelButtonClicked = { navController.navigate(LunchTrayScreen.Start.name) },
+                    onNextButtonClicked = {
+                        navController.navigate(LunchTrayScreen.Start.name)
+                        viewModel.resetOrder() },
+                    onCancelButtonClicked = {
+                        navController.navigate(LunchTrayScreen.Start.name)
+                        viewModel.resetOrder() },
                     modifier = Modifier.fillMaxSize().padding(innerPadding)
                 )
             }

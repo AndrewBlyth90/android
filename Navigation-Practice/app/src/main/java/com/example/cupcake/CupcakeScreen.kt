@@ -44,7 +44,6 @@ import androidx.navigation.compose.rememberNavController
 import com.example.cupcake.data.DataSource
 import com.example.cupcake.ui.OrderSummaryScreen
 import com.example.cupcake.ui.OrderViewModel
-import com.example.cupcake.ui.SelectOptionPreview
 import com.example.cupcake.ui.SelectOptionScreen
 import com.example.cupcake.ui.StartOrderScreen
 
@@ -122,7 +121,7 @@ fun CupcakeApp(
             }
 
             composable(route = CupcakeScreen.Flavor.name) {
-                val contfext = LocalContext.current
+                val context = LocalContext.current
 
                 SelectOptionScreen(
                     subtotal = uiState.price,
