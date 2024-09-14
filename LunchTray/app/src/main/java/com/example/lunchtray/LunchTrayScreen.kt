@@ -15,24 +15,36 @@
  */
 package com.example.lunchtray
 
+import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.lunchtray.ui.OrderViewModel
+import com.example.lunchtray.ui.StartOrderScreen
 
-// TODO: Screen enum
+enum class lunchtrayScreen(@StringRes val title: Int){
+    start(title = R.string.start_order),
+    entree(title = R.string.choose_entree),
+    side(title = R.string.choose_side_dish),
+    Accompaniment(title = R.string.choose_accompaniment),
+    checkout(title = R.string.order_checkout)
+}
 
 // TODO: AppBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LunchTrayApp() {
-    // TODO: Create Controller and initialization
 
-    // Create ViewModel
+    val navController = rememberNavController()
     val viewModel: OrderViewModel = viewModel()
 
     Scaffold(
@@ -42,6 +54,13 @@ fun LunchTrayApp() {
     ) { innerPadding ->
         val uiState by viewModel.uiState.collectAsState()
 
-        // TODO: Navigation host
+        NavHost(navController = navController, startDestination = lunchtrayScreen.start.name, modifier = Modifier.fillMaxSize()) {
+
+            composable(route = lunchtrayScreen.start.name){
+                StartOrderScreen(onStartOrderButtonClicked = { /*TODO*/ })
+            }
+
+        }
+
     }
 }
