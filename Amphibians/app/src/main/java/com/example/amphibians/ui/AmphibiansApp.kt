@@ -1,4 +1,6 @@
 package com.example.amphibians.ui
 
-class AmphibiansAppScreen {
+class AmphibiansApp {
+
+
 }
