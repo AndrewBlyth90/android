@@ -47,7 +47,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/juice_name"
-        android:id="@+id/juice_name"
+        android:id="@+id/name"
         android:paddingTop="16dp"
         app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/horizontal_divider" />
@@ -59,7 +59,7 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:paddingTop="16dp"
-        app:layout_constraintStart_toEndOf="@+id/juice_name"
+        app:layout_constraintStart_toEndOf="@+id/name"
         app:layout_constraintTop_toBottomOf="@id/horizontal_divider"
         app:layout_constraintEnd_toEndOf="parent"
         />
@@ -71,7 +71,7 @@
         android:id="@+id/description"
         android:paddingTop="24dp"
         app:layout_constraintStart_toStartOf="@id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@+id/juice_name" />
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <EditText
         android:layout_width="0dp"
@@ -79,7 +79,7 @@
         android:id="@+id/juice_desc_input_field"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        app:layout_constraintStart_toEndOf="@+id/juice_name"
+        app:layout_constraintStart_toEndOf="@+id/name"
         app:layout_constraintTop_toBottomOf="@id/juice_name_input_field"
         app:layout_constraintEnd_toEndOf="parent"
         />
@@ -94,7 +94,7 @@
         app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <Spinner
-        android:id="@+id/color_selector"
+        android:id="@+id/color_spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -102,6 +102,47 @@
         android:paddingTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/color"
         app:layout_constraintTop_toBottomOf="@id/juice_desc_input_field" />
+
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:paddingTop="34dp"
+        android:text="@string/juice_rating"
+        app:layout_constraintStart_toEndOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/color" />
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@id/rating"
+        app:layout_constraintTop_toBottomOf="@id/color_spinner" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/cancel"
+        android:id="@+id/cancelButton"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/rating_bar" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/save"
+        android:id="@+id/saveButton"
+        android:layout_marginEnd="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rating_bar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
