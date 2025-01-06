@@ -1,0 +1,58 @@
+package com.example.charactersheets
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.charactersheets.ui.theme.CharacterSheetsTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            CharacterSheetsTheme {
+                Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
+                Column (
+                    Modifier.fillMaxSize(),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ){
+                    CreateNewCharacterButton()
+                }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun CreateNewCharacterButton(modifier: Modifier = Modifier) {
+    Button(onClick = { /*TODO*/ }) {
+        Text("Create new character")
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    CharacterSheetsTheme {
+        Column (
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ){
+            CreateNewCharacterButton()
+        }
+    }
+}
