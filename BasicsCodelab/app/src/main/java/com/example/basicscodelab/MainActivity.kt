@@ -38,13 +38,15 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    var isExpanded = remember { mutableStateOf((false)) }
+    val isExpanded = remember { mutableStateOf((false)) }
+    val extraPadding = if (isExpanded.value) 48.dp else 0.dp
+
         Surface(
             color = MaterialTheme.colorScheme.primary,
             modifier = modifier.padding(vertical = 4.dp, horizontal = 8.dp)
         ) {
             Row (modifier = modifier.padding(24.dp)) {
-                Column (modifier = Modifier.weight(1f)) {
+                Column (modifier = Modifier.weight(1f).padding(bottom = extraPadding)) {
                     Text(text = "Hello")
                     Text(text = name)
                 }
