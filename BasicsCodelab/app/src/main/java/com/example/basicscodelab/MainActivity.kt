@@ -27,6 +27,11 @@ import com.example.basicscodelab.ui.theme.BasicsCodelabTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ExpandLess
+import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -93,10 +98,22 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                     .padding(bottom = extraPadding.coerceAtLeast(0.dp))) {
                     Text(text = "Hello")
                     Text(text = name, style = MaterialTheme.typography.headlineMedium)
+                if (isExpanded) {
+                    Text(
+                        text = ("Composem ipsum color sit lazy, " +
+                                "padding theme elit, sed do bouncy. ").repeat(4),
+                    )
                 }
-                ElevatedButton(onClick = { isExpanded = !isExpanded }) {
-                    Text(if (isExpanded) "Show Less" else "Show More")
                 }
+                IconButton(onClick = { isExpanded = !isExpanded }) {
+                    Icon(
+                        imageVector =  if (isExpanded)
+                            Icons.Filled.ExpandLess
+                        else
+                            Icons.Filled.ExpandMore,
+                        contentDescription = null)
+                }
+
             }
         }
 }
