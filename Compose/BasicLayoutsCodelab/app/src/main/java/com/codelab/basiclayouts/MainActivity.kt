@@ -27,6 +27,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
@@ -85,6 +86,8 @@ fun SearchBar(
 // Step: Align your body - Alignment
 @Composable
 fun AlignYourBodyElement(
+    @DrawableRes image: Int,
+    @StringRes name: Int,
     modifier: Modifier = Modifier
 ) {
     Column (
@@ -92,13 +95,15 @@ fun AlignYourBodyElement(
         modifier = modifier
     ) {
         Image(
-            painter = painterResource(id = R.drawable.ab1_inversions),
+            painter = painterResource(id = image),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = modifier.size(88.dp).clip(CircleShape)
         )
         Text(
-            text = stringResource(R.string.ab1_inversions)
+            text = stringResource(name),
+            style = MaterialTheme.typography.bodyMedium,
+            modifier = Modifier.paddingFromBaseline(top = 24.dp, bottom = 8.dp),
         )
     }
 }
@@ -205,6 +210,8 @@ fun SearchBarPreview() {
 fun AlignYourBodyElementPreview() {
     MySootheTheme {
         AlignYourBodyElement(
+            name = R.string.ab1_inversions,
+            image = R.drawable.ab1_inversions,
             modifier = Modifier.padding(8.dp)
         )
     }
