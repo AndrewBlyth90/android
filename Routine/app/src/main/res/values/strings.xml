@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Routine</string>
+    <string name="workouts">Workouts</string>
+    <string name="workout_1">Workout 1</string>
+    <string name="workout_2">Workout 2</string>
+    <string name="workout_3">Workout 3</string>
+    <string name="new_workout">Create Workout</string>
+
+
+    <string name="exercises">Exercises</string>
+    <string name="flat_bench_db_press">Flat Bench DB Press</string>
+    <string name="bent_over_db_row">Bent Over DB Row</string>
+    <string name="seated_db_shoulder_press">Seated DB Shoulder Press</string>
+    <string name="lat_pull_down">Lat Pull Down</string>
+    <string name="goblet_squat">Goblet Squat</string>
+    <string name="reverse_lunges">Reverse Lunges</string>
+</resources>
